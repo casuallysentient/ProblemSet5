@@ -20,7 +20,7 @@ public class ProblemSet5 {
   public static void main(String[] args) {
     ProblemSet5 ps = new ProblemSet5();
 
-    System.out.println(ps.surroundMe("il", "Rely"));
+    System.out.println(ps.endsMeet("abcdefg", 5));
   }
 
   /*
@@ -49,7 +49,16 @@ public class ProblemSet5 {
   */
 
   public String endsMeet(String text, int n) {
-    return("placeholder");
+    if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
+      String firstNCharacters = text.substring(0, n);
+      String lastNCharacters = text.substring(text.length() - n);
+
+      String firstAndLastNCharacters = firstNCharacters + lastNCharacters;
+
+      return firstAndLastNCharacters;
+    } else {
+      return text;
+    }
   }
 
   /*
