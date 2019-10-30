@@ -20,7 +20,7 @@ public class ProblemSet5 {
   public static void main(String[] args) {
     ProblemSet5 ps = new ProblemSet5();
 
-    System.out.println(ps.middleMan("APCSP"));
+    System.out.println(ps.isCentered("APCSP", "PCS"));
   }
 
   /*
@@ -86,7 +86,18 @@ public class ProblemSet5 {
   */
 
   public boolean isCentered(String text, String target) {
-    return true;
+    if (!text.equals(null) && text.length() % 2 == 1 && text.length() >= 3 && !target.equals(null) && target.length() == 3) {
+      int startingPoint = (text.length() - 3) / 2;
+      String middleString = text.substring(startingPoint, startingPoint + 3);
+
+      if (middleString.equals(target)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
 
   /*
