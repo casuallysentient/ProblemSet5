@@ -20,7 +20,7 @@ public class ProblemSet5 {
   public static void main(String[] args) {
     ProblemSet5 ps = new ProblemSet5();
 
-    System.out.println(ps.isCentered("APCSP", "PCS"));
+    System.out.println(ps.countMe("Jared had a rough lad by the name of Donald.", 'd'));
   }
 
   /*
@@ -107,7 +107,26 @@ public class ProblemSet5 {
   */
 
   public int countMe(String text, char suffix) {
-    return(5);
+    int numWords = 0;
+
+    if (!text.equals(null) && ((suffix >= 'a' && suffix <= 'z') || (suffix >= 'A' && suffix <= 'Z'))) {
+      boolean firstWord = true;
+      boolean newWord;
+      for (int i = 0; i < text.length(); i++) {
+        if (text.charAt(i) == ' ') {
+          if(text.charAt(i - 1) == suffix) {
+            numWords++;
+          }
+        } else if (i == text.length() - 1) {
+          if (text.charAt(i - 1) == suffix) {
+            numWords++;
+          }
+        }
+      }
+    } else {
+      numWords = -1;
+    }
+    return numWords;
   }
 
   /*
