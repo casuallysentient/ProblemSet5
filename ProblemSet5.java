@@ -20,7 +20,7 @@ public class ProblemSet5 {
   public static void main(String[] args) {
     ProblemSet5 ps = new ProblemSet5();
 
-    System.out.println(ps.intertwine("I hswrsImgo.", "fti ok \' od"));
+    System.out.println(ps.isPalindrome("racecar"));
   }
 
   /*
@@ -254,6 +254,18 @@ public class ProblemSet5 {
   */
 
   public boolean isPalindrome(String text) {
-    return(true);
+    String reversedText = "";
+    if (text != null) {
+      for (int i = text.length() - 1; i >= 0; i--) {
+        reversedText += text.charAt(i);
+      }
+      if (reversedText.equals(text)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
 }
