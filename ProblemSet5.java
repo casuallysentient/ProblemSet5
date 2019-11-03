@@ -20,7 +20,7 @@ public class ProblemSet5 {
   public static void main(String[] args) {
     ProblemSet5 ps = new ProblemSet5();
 
-    System.out.println(ps.sequence("aaa aaaa aaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaa"));
+    System.out.println(ps.intertwine("I hswrsImgo.", "fti ok \' od"));
   }
 
   /*
@@ -167,6 +167,7 @@ public class ProblemSet5 {
 
   public long addMe(String text) {
     int digitSum = 0;
+
     if (text != null) {
       for (int i = 0; i < text.length(); i++) {
         if (Character.isDigit(text.charAt(i))) {
@@ -191,6 +192,7 @@ public class ProblemSet5 {
     long lastSequence = 0;
     String lastCharacter = "";
     char sequenceCharacter = 'x';
+
     if (text != null) {
       for (int i = 0; i < text.length(); i++) {
         sequenceCharacter = text.charAt(i);
@@ -222,7 +224,27 @@ public class ProblemSet5 {
   */
 
   public String intertwine(String a, String b) {
-    return("placeholder");
+    String longerString = "";
+    String shorterString = "";
+    String intertwinedString = "";
+    if (a != null && b != null) {
+      if (a.length() > b.length()) {
+        for (int i = 0; i <= a.length() - b.length(); i++) {
+          b += " ";
+        }
+      } else if (b.length() > a.length()) {
+        for (int i = 0; i < b.length() - a.length(); i++) {
+          a += " ";
+        }
+      }
+      for (int i = 0; i < a.length(); i++) {
+        intertwinedString += a.substring(i, i + 1);
+        intertwinedString += b.substring(i, i + 1);
+      }
+      return intertwinedString;
+    } else {
+      return null;
+    }
   }
 
   /*
