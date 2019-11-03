@@ -137,6 +137,7 @@ public class ProblemSet5 {
 
   public int triplets(String text) {
     int numTriplets = 0;
+    
     if (text != null) {
       for (char tripletLetter = 'a'; tripletLetter <= 'z'; tripletLetter++) {
         for (int i = 0; i < text.length() - 2; i++) {
