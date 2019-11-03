@@ -20,7 +20,7 @@ public class ProblemSet5 {
   public static void main(String[] args) {
     ProblemSet5 ps = new ProblemSet5();
 
-    System.out.println(ps.triplets("aaa SSS ddD ZZz"));
+    System.out.println(ps.addMe("Why was 6 scared of 7? Because 789."));
   }
 
   /*
@@ -137,7 +137,7 @@ public class ProblemSet5 {
 
   public int triplets(String text) {
     int numTriplets = 0;
-    
+
     if (text != null) {
       for (char tripletLetter = 'a'; tripletLetter <= 'z'; tripletLetter++) {
         for (int i = 0; i < text.length() - 2; i++) {
@@ -166,7 +166,17 @@ public class ProblemSet5 {
   */
 
   public long addMe(String text) {
-    return(5);
+    int digitSum = 0;
+    if (text != null) {
+      for (int i = 0; i < text.length(); i++) {
+        if (Character.isDigit(text.charAt(i))) {
+          digitSum = digitSum + (Character.getNumericValue(text.charAt(i)));
+        }
+      }
+    } else {
+      digitSum = -1;
+    }
+    return digitSum;
   }
 
   /*
