@@ -20,7 +20,7 @@ public class ProblemSet5 {
   public static void main(String[] args) {
     ProblemSet5 ps = new ProblemSet5();
 
-    System.out.println(ps.countMe("Jared had a rough lad by the name of Donald.", 'd'));
+    System.out.println(ps.triplets("aaa SSS ddD ZZz"));
   }
 
   /*
@@ -136,7 +136,26 @@ public class ProblemSet5 {
   */
 
   public int triplets(String text) {
-    return(5);
+    int numTriplets = 0;
+    if (text != null) {
+      for (char tripletLetter = 'a'; tripletLetter <= 'z'; tripletLetter++) {
+        for (int i = 0; i < text.length() - 2; i++) {
+          if (text.charAt(i) == tripletLetter && text.charAt(i + 1) == tripletLetter && text.charAt(i + 2) == tripletLetter) {
+            numTriplets++;
+          }
+        }
+      }
+      for (char tripletLetter = 'A'; tripletLetter <= 'Z'; tripletLetter++) {
+        for (int i = 0; i < text.length() - 2; i++) {
+          if (text.charAt(i) == tripletLetter && text.charAt(i + 1) == tripletLetter && text.charAt(i + 2) == tripletLetter) {
+            numTriplets++;
+          }
+        }
+      }
+    } else {
+      numTriplets = -1;
+    }
+    return numTriplets;
   }
 
   /*
