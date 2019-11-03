@@ -20,7 +20,7 @@ public class ProblemSet5 {
   public static void main(String[] args) {
     ProblemSet5 ps = new ProblemSet5();
 
-    System.out.println(ps.addMe("Why was 6 scared of 7? Because 789."));
+    System.out.println(ps.sequence("aaa aaaa aaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaa"));
   }
 
   /*
@@ -186,7 +186,32 @@ public class ProblemSet5 {
   */
 
   public long sequence(String text) {
-    return(5);
+    long sequenceLength = 0;
+    long longestSequence = 0;
+    long lastSequence = 0;
+    String lastCharacter = "";
+    char sequenceCharacter = 'x';
+    if (text != null) {
+      for (int i = 0; i < text.length(); i++) {
+        sequenceCharacter = text.charAt(i);
+        while (sequenceCharacter == text.charAt(i) && i < text.length() - 1) {
+          sequenceLength++;
+          i++;
+          lastCharacter = String.valueOf(text.charAt(i));
+        }
+        if (sequenceLength > longestSequence) {
+          longestSequence = sequenceLength;
+        }
+        lastSequence = sequenceLength;
+        sequenceLength = 0;
+      }
+      if (text.charAt(text.length() - 1) == sequenceCharacter && lastSequence == longestSequence && lastCharacter.equals(String.valueOf(text.charAt(text.length() - 1)))) {
+        longestSequence++;
+      }
+    } else {
+      longestSequence = -1;
+    }
+    return longestSequence;
   }
 
   /*
